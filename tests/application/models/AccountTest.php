@@ -12,7 +12,7 @@ class AccountModelTest extends ModelTestCase
   {
     
     $account = new \Entities\Account;
-    $account->setUsername('wjgilmore-test');
+    $account->setUsername('wjgilmore-test2');
     $account->setEmail('example@wjgilmore.com');
     $account->setPassword('jason');
     $account->setZip('43201');

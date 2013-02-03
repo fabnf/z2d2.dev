@@ -1,0 +1,9 @@
+<br /><br />
+<div id="view-content">
+    <h3>Login Form</h3>
+        <?php echo $this->formError; ?>
+          <?php echo $this->Errors($this->errors);?>
+          <?php echo $this->form ?>
+    <br/>
+    <p>Lost your password? <a href="<?php echo $this->url(array('controller' => 'account', 'action' => 'lost')) ?>">Click here to recover</a></p>
+</div>

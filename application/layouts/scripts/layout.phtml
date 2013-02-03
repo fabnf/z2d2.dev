@@ -1,14 +1,57 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>z2d2 = Zend Framework 1.X + Doctrine 2 Integration</title>
 <style type="text/css">
 html {
  font-family: Palatino, Arial;
 }
 </style>
+<?php echo $this->headLink()->appendStylesheet('/styles/styles.css') ?>
 </head>
 <body>
-
+    <menu type="context">
+        <li>
+            <a href="<?php echo  $this->url(
+            array('controller' => 'account', 'action' => 'index'),
+            'default',
+            true)?>">Account Home</a></li>        
+        <li>
+            <a href="<?php echo  $this->url(
+            array('controller' => 'account', 'action' => 'map'),
+            'default',
+            true)?>">Map</a></li> 
+        <?php if(!$this->account) { ?>
+            <li>
+                <a href="<?php echo  $this->url(
+                array('controller' => 'account', 'action' => 'login'),
+                'default',
+                true)?>">Log In</a></li>
+       
+            <li>
+                <a href="<?php echo  $this->url(
+                array('controller' => 'account', 'action' => 'register'),
+                'default',
+                true)?>">add account</a></li>
+        <?php } else { ?>
+            <li>
+                Welcome back, <a href="/account/"><?php echo $this->account->getUsername() ?></a>
+                <a href="/account/logout">Logout</a>
+            </li>
+        <?php }  ?>
+            <li><a href="<?php echo  $this->url(
+            array('controller' => 'game', 'action' => 'add'),
+            'default',
+            true)?>">add game</a></li>
+    </menu>
+    
+    <?php 
+    if( count($this->messages) > 0 )
+    {
+        printf("<div id=\"flash\">%s</div>", $this->messages[0]);
+    }
+    ?>    
 <?php echo $this->layout()->content; ?>
 
 

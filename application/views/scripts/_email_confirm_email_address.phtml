@@ -1,0 +1,17 @@
+<?php
+$email = <<< email
+Dear {$account->getUsername()},
+    
+Your GameNomad account has been created! To Complete registration, click on the below link to confirm your e-mail address.
+
+http://z2d2.dev/account/confirm/key/{$account->getRecovery()}
+    
+Once confirmed, you'll be able to access exclusive GameNomad features!
+
+Thank you!
+The GameNomad Team
+
+Questions?
+
+email;
+?>

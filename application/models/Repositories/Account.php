@@ -13,6 +13,19 @@ use Doctrine\ORM\EntityRepository;
 class Account extends EntityRepository
 {
   
+  public function findOneByUsernameOrEmail($username, $email)
+  {
+   
+    $qb = $this->_em->createQueryBuilder();
+    $qb->select('a.username')
+          ->from('Entities\Account', 'a')
+          ->where('a.username = :username')
+          ->orWhere('a.email = :email')
+          ->setParameter('username', $username)
+          ->setParameter('email', $email);
+   
+      return $qb->getQuery()->getResult();   
+  }
   public function findNewestAccounts() {
    
       $now = new \DateTime("now");

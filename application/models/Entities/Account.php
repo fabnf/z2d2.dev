@@ -25,9 +25,15 @@ class Account
     /** @Column(type="string", length=32) */
     private $password;
 
+    /** @Column(type="string", length=32) */
+    private $recovery;
+    
     /** @Column(type="string", length=10) */
     private $zip;
 
+    /** @Column(type="integer", length=1) */
+    private $confirmed;
+    
     /** @Column(type="datetime") */
     private $created;
 
@@ -116,6 +122,21 @@ class Account
         $this->password = md5($password);
     }
 
+    public function setConfirmed($confirmed)
+    {
+        $this->confirmed = $confirmed;
+    }
+
+    public function getRecovery()
+    {
+        return $this->recovery;
+    }
+    
+    public function setRecovery($recovery)
+    {
+        $this->recovery = $recovery;
+    }
+    
     public function getZip()
     {
         return $this->zip;

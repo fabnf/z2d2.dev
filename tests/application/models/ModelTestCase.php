@@ -12,7 +12,7 @@ class ModelTestCase extends PHPUnit_Framework_TestCase
       'testing', 
       APPLICATION_PATH . '/configs/application.ini'
     );
-
+ 
     $bootstrap = $application->bootstrap()->getBootstrap();
 
     $this->em = $bootstrap->getResource('entityManager'); 

@@ -1,0 +1,22 @@
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>Account</b> and script/action name <b>index</b></p>
+       
+
+    <h3>Search Form</h3>
+        <?php echo $this->formError; ?>
+          <?php echo $this->Errors($this->errors);?>
+          <?php echo $this->form ?>
+
+        <?php foreach($this->aBooks as $item): ?>
+        <?php /* echo "<pre>"; print_r($item); die;*/ ?>
+        <div class="item">
+          <a href="<?php echo $this->url(array('controller' => 'account', 'action' => 'show', 'asin' => $item->ASIN),null, true, false) ; ?>"><?php echo $item->Title ?></a>
+          by <?php if (is_array($item->Author)): ?>
+          <?php echo implode(', ', $item->Author) ?>
+          <?php else: ?>
+          <?php echo $item->Author ?>
+          <?php endif; ?>
+        </div>
+        <?php endforeach;    ?>     
+</div>

@@ -1,0 +1,23 @@
+<br /><br />
+<div id="view-content">
+<p>View script for controller <b>Game</b> and script/action name <b>add</b></p>
+    <?php
+    $form = $this->form;
+    ?>
+    <form method="<?php echo $form->getMethod() ?>" action="<?php echo
+    $form->getAction()?>">
+    <div class="element">
+        <?php echo $form->name->renderLabel()
+              . $form->name->renderViewHelper() ?>
+    </div>
+    <div class="element">
+        <?php echo $form->publisher->renderLabel()
+              . $form->publisher->renderViewHelper() ?>
+    </div>
+    <div class="element">
+        <?php echo $form->price->renderLabel()
+              . $form->price->renderViewHelper() ?>
+        <?php echo $this->formSubmit('submit', 'Save') ?>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<br /><br />
+<div id="view-content">
+    <ul>
+    <?php
+    foreach($this->games as $game) 
+    {
+       ?><li><?php echo $game->getId()?>-<?php echo $game->getName()?></li><?php 
+    }
+    ?>
+    </ul>
+    <p>View script for controller <b>Game</b> and script/action name <b>index</b></p>
+</div>
